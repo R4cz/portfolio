@@ -1,2 +1,2 @@
 # Personal-Web-Page
-R4cz's personal website
+My personal website
