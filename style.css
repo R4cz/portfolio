@@ -135,10 +135,13 @@ img {
     transition: .3s;
 
     color: var(--light-green);
+    transition: var(--transition);
 }
 .change__theme:hover {
     color: var(--lightest-green);
+    transition: var(--transition);
 }
+/* THEME */
 
 /* VARIABLES LIGHT THEME */
 body.light__theme {
@@ -234,12 +237,13 @@ body::-webkit-scrollbar-thumb:active {
 .isotipo__button {
     width: 1.5rem;
 }
+.isotipo__racz {
+    fill: var(--light-green);
+    transition: var(--transition);
+}
 .isotipo__button:hover .isotipo__racz {
     fill: var(--lightest-green);
     transition: var(--transition);
-}
-.isotipo__racz {
-    fill: var(--light-green);
 }
 
 .links__list--box {
@@ -305,6 +309,7 @@ body::-webkit-scrollbar-thumb:active {
 .social__media--li-a {
     padding: 10px;
     color: var(--light-green);
+    transition: var(--transition);
 }
 .social__media--li-a:hover {
     color: var(--lightest-green);
@@ -313,6 +318,10 @@ body::-webkit-scrollbar-thumb:active {
 .social__media--li-a-icon {
     width: 1.25rem;
     height: 1.25rem;
+}
+.social__media--li-a-icon:hover {
+    transition: var(--transition);
+    transform: translateY(-.35rem);
 }
 .social__media li:last-of-type {
     margin-bottom: 20px;
@@ -357,14 +366,16 @@ body::-webkit-scrollbar-thumb:active {
     margin: 20px auto;
     padding: 10px;
     font-family: var(--body-font);
-    font-size: var(--fz-xxs);
+    font-size: var(--fz-xs);
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
     color: var(--light-green);
+    transition: var(--transition);
 }
 .email__contact--a:hover {
     color: var(--lightest-green);
     transition: var(--transition);
+    transform: translateY(-.35rem);
 }
 /* SIDE ELEMENTS */
 
@@ -426,6 +437,7 @@ body::-webkit-scrollbar-thumb:active {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    transition: var(--transition);
 }
 /* HOME */
 
@@ -442,11 +454,14 @@ body::-webkit-scrollbar-thumb:active {
 .button:hover {
     background-color: var(--lightest-green);
     color: var(--darkest-green);
+    transition: var(--transition);
+    transform: translateY(-.35rem);
 }
 .button__ghost {
     background-color: transparent;
     border: 2px solid var(--light-green);
     color: var(--light-green);
+    transition: var(--transition);
 }
 /* BUTTONS */
 
@@ -477,7 +492,7 @@ body::-webkit-scrollbar-thumb:active {
     border-radius: 1.25rem;
 }
 .skills__title {
-    font-size: var(--fz-md);
+    font-size: var(--fz-sm);
     font-weight: var(--font-medium);
     color: var(--lightest-green);
     text-align: center;
@@ -508,33 +523,42 @@ body::-webkit-scrollbar-thumb:active {
     padding-top: 1rem;
 }
 .work__card {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
     background-color: var(--dark-green);
     padding: 1rem;
     border-radius: 1rem;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+.work__card:hover {
+    transition: var(--transition);
+    transform: translateY(-.5rem);
+}
+.work__card:hover .work__title {
+    color: var(--white);
+    transition: var(--transition);
+}
+.work__card:hover .work__card--span {
+    color: var(--green);
+    transition: var(--transition);
 }
 .work__title {
+    display: flex;
     font-size: var(--fz-md);
     font-weight: var(--font-medium);
-    margin-bottom: .25rem;
+    margin-bottom: 1.5rem;
 
-    color: var(--lightest-green);
-}
-.work__button {
-    width: max-content;
-    color: var(--light-green);
-    font-size: var(--fz-sm);
-    display: flex;
+    justify-content: center;
     align-items: center;
-    column-gap: .25rem;
-
-    margin-top: .75rem;
+    color: var(--light-green);
+    transition: var(--transition);
 }
-.work__button:hover .work__icon{
-    transform: translateX(.25rem);
-}
-.work__icon {
-    font-size: 1rem;
-    transition: .4s;
+.work__card--span {
+    font-size: var(--fz-sm);
+    margin-top: 1.5rem;
+    transition: var(--transition);
 }
 /* WORKS */
 
@@ -555,48 +579,48 @@ body::-webkit-scrollbar-thumb:active {
     gap: 1rem;
 }
 .contact__card {
-    background-color: var(--dark-green);
-    padding: 1rem;
-    border-radius: .75rem;
-    text-align: center;
-}
-.contact__card--icon {
-    font-size: 2rem;
-    color: var(--white);
-    margin-bottom: .25rem;
-}
-.contact__card--title,
-.contact__card--data {
-    font-size: var(--fz-sm);
-}
-.contact__card--title {
-    font-weight: var(--font-medium);
-    color: var(--lightest-green);
-}
-.contact__card--data {
-    display: block;
-    margin-bottom: .75rem;
-}
-.contact__button {
-    color: var(--light-green);
-    font-size: var(--fz-sm);
     display: flex;
-    align-items: center;
+    background-color: var(--dark-green);
+    border-radius: 1.25rem;
+    text-align: center;
+    flex-direction: column;
+
+    transition: var(--transition);
+}
+.contact__card:hover {
+    transition: var(--transition);
+    transform: translateY(-.5rem);
+}
+.contact__card a {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    column-gap: .25rem;
+    align-items: center;
 }
-.contact__button:hover .contact__button--icon {
-    transform: translateX(.25rem);
+.contact__card a span {
+    margin-bottom: 1rem;
+    color: var(--white);
 }
-.contact__button--icon {
-    font-size: 1rem;
-    transition: .4s;
+.contact__icon {
+    width: 8rem;
+    height: 8rem;
+    fill: var(--light-green);
+    transition: var(--transition);
+    margin: 2rem 0;
+}
+.contact__card:hover .contact__icon {
+    fill: var(--lightest-green);
+    transition: var(--transition);
+}
+.contact__card:hover .contact__card--a-span {
+    color: var(--green);
+    transition: var(--transition);
 }
 
 .contact__form--div {
     position: relative;
     margin-bottom: 2rem;
-    height: 4rem;
+    height: 3.7rem;
 }
 .contact__form--input {
     position: absolute;
@@ -706,9 +730,7 @@ body::-webkit-scrollbar-thumb:active {
         right: 0;
         margin: 0 auto;
     }
-    .about__description {
-        padding: 0 9rem;
-    }
+    
     .skills__container {
         justify-content: center;
     }
@@ -794,7 +816,7 @@ body::-webkit-scrollbar-thumb:active {
     .about__description {
         padding-left: 0;
         margin-bottom: 2.5rem;
-        width: 480px;
+        width: 330px;
     }
 
     .skills__container {
@@ -809,10 +831,10 @@ body::-webkit-scrollbar-thumb:active {
         row-gap: 3rem;
     }
     .work__card {
-        padding: 1.25rem;
+        padding: 2rem 3rem;
     }
     .work__title {
-        margin-bottom: .5rem;
+        margin-bottom: 1rem;
     }
 
     .contact__container {
