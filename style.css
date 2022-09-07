@@ -674,17 +674,6 @@ body::-webkit-scrollbar-thumb:active {
 .footer__logotipo--racz {
     fill: var(--green);
 }
-.footer__social {
-    display: flex;
-    justify-content: center;
-    column-gap: 1.25rem;
-}
-.footer__social--link {
-    color: var(--green);
-    padding: .25rem;
-    font-size: 1rem;
-    display: inline-flex;
-}
 .footer__copy {
     color: var(--green);
     margin-bottom: 1rem;
