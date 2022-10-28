@@ -1,8 +1,12 @@
 /* CHANGE BACKGROUND HEADER */
-function scrollHeader(){
+function scrollHeader() {
     const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 50) header.classList.add('scroll__header'); else header.classList.remove('scroll__header')
+    if(this.scrollY >= 50) {
+        header.classList.add('scroll__header')
+    } else {
+        header.classList.remove('scroll__header')
+    } 
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -10,18 +14,18 @@ window.addEventListener('scroll', scrollHeader)
 /* SCROLL SECTIONS ACTIVE LINK */
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive(){
+function scrollActive() {
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight,
               sectionTop = current.offsetTop - 58,
               sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.links__list--li-a[href*=' + sectionId + ']').classList.add('active__link')
-        }else{
-            document.querySelector('.links__list--li-a[href*=' + sectionId + ']').classList.remove('active__link')
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector('.navbar__list[href*=' + sectionId + ']').classList.add('active__link')
+        } else {
+            document.querySelector('.navbar__list[href*=' + sectionId + ']').classList.remove('active__link')
         }
     })
 }
